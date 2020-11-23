@@ -7,7 +7,7 @@ package ua.darkphantom1337.mobfilter;
 import org.bukkit.Bukkit;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
-import org.bukkit.event.entity.EntitySpawnEvent;
+import org.bukkit.event.entity.CreatureSpawnEvent;
 import org.bukkit.plugin.java.JavaPlugin;
 
 public class Main extends JavaPlugin implements Listener {
@@ -34,7 +34,7 @@ public class Main extends JavaPlugin implements Listener {
 	}
 
 	@EventHandler
-	public void onBucketEmpty(EntitySpawnEvent e) {
+	public void onBucketEmpty(CreatureSpawnEvent e) {
 		if (cfg.isEnable())
 			if (!cfg.getAllowedMobs().contains(e.getEntityType().name()))
 				e.setCancelled(true);
